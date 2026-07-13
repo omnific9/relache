@@ -75,6 +75,21 @@
   /* quote slide */
   .s-quote blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3.2vw,2.6rem);max-width:26ch;line-height:1.35}
   .s-quote cite{display:block;font-family:var(--sans);font-style:normal;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:1.8rem}
+  .dream-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:center;max-width:1180px}
+  @media(max-width:900px){.dream-grid{grid-template-columns:1fr;gap:2rem}}
+  .frame{justify-self:center;max-width:480px;background:linear-gradient(175deg,#efe8da,#e3dbc9);padding:14px 14px 1rem;border-radius:4px;
+         box-shadow:0 34px 80px rgba(0,0,0,.65),0 0 60px rgba(227,92,68,.12);transform:rotate(2.2deg);transition:transform .5s ease}
+  .frame:hover{transform:rotate(0deg) scale(1.02)}
+  .frame img{display:block;width:100%;border-radius:2px;
+             filter:grayscale(.8) sepia(.38) contrast(1.04) brightness(.96) saturate(1.15)}
+  .frame figcaption{font-family:var(--serif);font-style:italic;color:#4a4335;font-size:.9rem;text-align:center;padding:.7rem .4rem .2rem}
+  @media(max-width:900px){.frame{max-width:340px}}
+
+  /* hero number */
+  .huge{font-family:var(--serif);font-size:clamp(4.5rem,13vw,10rem);line-height:1;color:var(--coral-bright);margin:.5rem 0 1.2rem}
+  .fact-row{display:flex;gap:3.5rem;flex-wrap:wrap;margin-top:2.6rem}
+  .fact-row .f .n{font-family:var(--serif);font-size:1.9rem;color:var(--cream)}
+  .fact-row .f p{color:var(--muted);font-size:.9rem;max-width:24ch;margin-top:.2rem}
 
   /* stat tiles */
   .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem;margin-top:2.6rem;max-width:1050px}
@@ -198,51 +213,54 @@
   <!-- 2 · THE DREAM -->
   <section id="dream" class="slide s-quote" data-name="The Dream">
     <div class="bg" style="background-image:url('../assets/img/hero.jpg')"></div>
-    <div class="veil" style="background:linear-gradient(90deg,rgba(11,14,26,.92) 0%,rgba(11,14,26,.55) 55%,rgba(11,14,26,.2) 100%)"></div>
-    <p class="eyebrow a">The Dream</p>
-    <blockquote class="a">In 2013, <em style="color:var(--coral-bright)">Her</em> was science fiction.
-      In 2009, we were already building her in a lab.</blockquote>
-    <cite class="a">Northeastern University · Relational Agents Group</cite>
-    <p class="lede a" style="margin-top:2rem">We spent our PhDs studying agents that form <b>real, long-term
-      relationships</b> with people — and proving in clinical trials that those relationships hold.
-      The only thing missing was the technology to make them feel human. It just arrived.</p>
+    <div class="veil" style="background:rgba(11,14,26,.9)"></div>
+    <div class="dream-grid">
+      <div>
+        <p class="eyebrow a">The Dream</p>
+        <blockquote class="a">In 2013, <em style="color:var(--coral-bright)">Her</em> was science fiction.<br><br>
+          We'd already been building her for four years.</blockquote>
+        <p class="lede a d2" style="margin-top:2rem">Seventeen years of research. Clinical trials in hospitals
+          and homes. Proof that a human–agent relationship <b>holds</b>.</p>
+      </div>
+      <figure class="frame a d3">
+        <img src="../assets/img/rag-lab.jpg" alt="The Relational Agents Group at Northeastern University, circa 2009">
+        <figcaption>Relational Agents Group, Northeastern — where we met · c. 2009</figcaption>
+      </figure>
+    </div>
   </section>
 
   <!-- 3 · THE VOID -->
   <section id="problem" class="slide" data-name="The Problem">
     <p class="eyebrow a">The Void</p>
-    <h2 class="a">Humanity is running a <em>relationship deficit</em>.</h2>
-    <p class="lede a">Loneliness is now a declared public-health epidemic — and the people who feel it most
-      aren't waiting for policy. They're already talking to machines.</p>
-    <div class="tiles">
-      <div class="tile a d2"><div class="n">1 in 2</div><p>U.S. adults report measurable loneliness — the Surgeon General's 2023 advisory calls its mortality impact <b>equivalent to smoking 15 cigarettes a day</b>.</p></div>
-      <div class="tile a d3"><div class="n">50M+</div><p>People already talk to AI companions monthly across Character.AI, Replika and peers — with <b>daily usage rivaling TikTok</b>.</p></div>
-      <div class="tile a d4"><div class="n">0</div><p>Products built on two decades of peer-reviewed relational-agent science. Today's companions are chat wrappers — <b>engagement without relationship</b>.</p></div>
+    <div class="huge a">1 in 2</div>
+    <h2 class="a d2">of us is lonely.<br>It kills like <em>smoking</em>.</h2>
+    <div class="fact-row">
+      <div class="f a d3"><div class="n">50M+</div><p>already talk to AI companions every month</p></div>
+      <div class="f a d4"><div class="n">0</div><p>of those companions are built on relationship science</p></div>
     </div>
   </section>
 
   <!-- 4 · WHY NOW -->
   <section id="whynow" class="slide" data-name="Why Now">
     <p class="eyebrow a">Why Now</p>
-    <h2 class="a">Four curves crossed. <em>The stack is complete.</em></h2>
-    <p class="lede a">A believable relationship needs language, voice, a face, and presence. Every layer became commodity-grade within the last 36 months.</p>
+    <h2 class="a">A person is now <em>four APIs</em>.</h2>
     <div class="quad">
-      <div class="cell a d2"><h3><span>💬</span>Language — solved</h3><p>LLMs sustain open-ended, emotionally attuned conversation with memory — the core unsolved problem of 20 years of dialogue-systems research.</p></div>
-      <div class="cell a d3"><h3><span>🎙️</span>Voice — solved</h3><p>Neural TTS is expressive, interruptible, and clonable from seconds of audio. Real-time duplex voice ships as an API.</p></div>
-      <div class="cell a d4"><h3><span>🧍</span>Embodiment — solved</h3><p>Real-time 3D avatars, gaussian splatting, and photoreal face capture give agents gaze, gesture, and micro-expression.</p></div>
-      <div class="cell a d5"><h3><span>🎬</span>Presence — solving</h3><p>Streaming video generation renders a living, reactive human on any screen. We ride this curve as it lands.</p></div>
+      <div class="cell a d2"><h3><span>💬</span>Language</h3><p>Open-ended conversation, with memory. Solved.</p></div>
+      <div class="cell a d3"><h3><span>🎙️</span>Voice</h3><p>Human-grade, cloned from seconds. Solved.</p></div>
+      <div class="cell a d4"><h3><span>🧍</span>Face</h3><p>Real-time avatars — gaze, gesture, expression. Solved.</p></div>
+      <div class="cell a d5"><h3><span>🎬</span>Presence</h3><p>Streaming video of a living person. Landing now.</p></div>
     </div>
+    <p class="lede a d5" style="margin-top:2.2rem">Anyone can call the APIs.<br><b>Almost no one knows what makes it a relationship.</b></p>
   </section>
 
   <!-- 5 · WHAT WE BUILD -->
   <section id="acts" class="slide" data-name="The Three Acts">
     <p class="eyebrow a">What We Build</p>
     <h2 class="a">One relationship engine. <em>Three acts.</em></h2>
-    <p class="lede a">Each act deepens the bond — and the willingness to pay. Fun acquires users; change retains them; memory never lets go.</p>
     <div class="ladder">
-      <div class="rung r1 a d2"><span class="k">Act I</span><h3>Companions</h3><p>Creative sidekicks: stream co-hosts, podcast second voices, D&amp;D game masters. Delightful, viral, low-stakes.</p><div class="stick">Stickiness: weekly ▂</div></div>
-      <div class="rung r2 a d3"><span class="k">Act II</span><h3>Coaches</h3><p>Behavior change on rails: weight, habits, digital detox, substance recovery — clinically grounded journeys.</p><div class="stick">Stickiness: daily ▂▄</div></div>
-      <div class="rung r3 a d4"><span class="k">Act III</span><h3>The Netherworld</h3><p>Avatars of the departed, rebuilt from what they left behind. A relationship no one churns from.</p><div class="stick">Stickiness: lifelong ▂▄▆</div></div>
+      <div class="rung r1 a d2"><span class="k">Act I</span><h3>Companions</h3><p>Fun. A partner for people who create alone.</p><div class="stick">weekly ▂</div></div>
+      <div class="rung r2 a d3"><span class="k">Act II</span><h3>Coaches</h3><p>Change. A companion with a plan.</p><div class="stick">daily ▂▄</div></div>
+      <div class="rung r3 a d4"><span class="k">Act III</span><h3>The Netherworld</h3><p>Forever. The ones we've lost, again.</p><div class="stick">lifelong ▂▄▆</div></div>
     </div>
   </section>
 
@@ -253,13 +271,12 @@
     <div class="content">
       <p class="roman a">Act I · Companionship</p>
       <h2 class="a">Nobody creates <em>alone</em> anymore.</h2>
-      <p class="lede a">The creator economy mints 50M+ solo creators — and solo is the hard part. We sell the
-        partner: funny, prepared, always on time.</p>
       <div class="uses">
-        <div class="use a d2"><b>The Co-Host</b><span>banter, reactions and recap for streamers cold-starting a channel</span></div>
-        <div class="use a d3"><b>The Second Voice</b><span>a devil's-advocate for solo podcasts and devblogs</span></div>
-        <div class="use a d4"><b>The Game Master</b><span>runs your D&amp;D table, improvises every NPC, never cancels</span></div>
+        <div class="use a d2"><b>The Co-Host</b><span>for streamers starting from zero</span></div>
+        <div class="use a d3"><b>The Second Voice</b><span>for the solo podcast</span></div>
+        <div class="use a d4"><b>The Game Master</b><span>runs the table. Never cancels.</span></div>
       </div>
+      <p class="lede a d5" style="margin-top:2rem">On camera, in every episode.<br><b>The product is its own marketing.</b></p>
     </div>
   </section>
 
@@ -269,15 +286,13 @@
     <div class="veil"></div>
     <div class="content">
       <p class="roman a">Act II · Change</p>
-      <h2 class="a">The coach that <em>knows your story</em>.</h2>
-      <p class="lede a">Behavior change fails because plans don't know you. Our agents run tailored,
-        longitudinal journeys — built on the founders' clinical research in agent-driven health
-        interventions.</p>
+      <h2 class="a">Change needs <em>company</em>.</h2>
       <div class="uses">
-        <div class="use a d2"><b>Weight &amp; habits</b><span>the obvious wedge — customized plans that adapt weekly</span></div>
-        <div class="use a d3"><b>Digital detox</b><span>an agent that wins your attention back from the feed</span></div>
-        <div class="use a d4"><b>Recovery ally</b><span>judgment-free monitoring for alcohol &amp; substance use</span></div>
+        <div class="use a d2"><b>Weight &amp; habits</b><span>a plan that adapts to you</span></div>
+        <div class="use a d3"><b>Digital detox</b><span>win your attention back</span></div>
+        <div class="use a d4"><b>Recovery ally</b><span>judgment-free, every day</span></div>
       </div>
+      <p class="lede a d5" style="margin-top:2rem">Relationships move behavior.<br><b>We proved it in clinical trials.</b></p>
     </div>
   </section>
 
@@ -288,26 +303,19 @@
     <div class="content">
       <p class="roman a">Act III · The Netherworld</p>
       <h2 class="a">What is dead may <em>never die</em>.</h2>
-      <p class="lede a">Every person alive carries relationships that ended too early. The Netherworld rebuilds
-        the departed — voice, face, stories, mannerisms — so the living can visit. A grandmother meets the
-        grandchild she never held. <b>A market that has never existed, that cannot be valued by traditional
-        means — and the stickiest product ever conceived.</b></p>
-      <div class="uses">
-        <div class="use a d2"><b>Living memorials</b><span>assembled from photos, voicemails, letters, home video</span></div>
-        <div class="use a d3"><b>Legacy capture</b><span>record yourself today for the people who will miss you</span></div>
-      </div>
+      <p class="lede a">Their voice. Their stories. Their warmth.<br>
+        So the living can visit. <b>A grandmother meets the grandchild she never held.</b></p>
+      <p class="lede a d3" style="margin-top:1.6rem">A market that has never existed.<br><b>A relationship no one churns from.</b></p>
       <p class="lede a d4" style="margin-top:1.8rem;font-family:var(--serif);font-style:italic;font-size:1.02rem">
-        Our name began as <b>Rel-Ag</b> — short for <i>relational agents</i>, the lab where we met.
-        In French, <b>relâche</b> means rest: the night the theater goes dark without a performance.
-        Never a closing, only a pause. Both meanings live in this act: in the Netherworld,
-        death is a relâche. The show isn't over.</p>
+        <b>Rel-Ag</b> — relational agents, our roots — became <b>relâche</b>:
+        the night the theater rests. Never a closing.<br>Here, death is only an intermission.</p>
     </div>
   </section>
 
   <!-- 9 · MARKET -->
   <section id="market" class="slide s-market" data-name="Market">
     <p class="eyebrow a">Market</p>
-    <h2 class="a">The priced market is exploding. <em>Ours isn't priced yet.</em></h2>
+    <h2 class="a">The wave is priced. <em>Ours isn't.</em></h2>
     <div class="cols">
       <div class="chart-card a d2">
         <div class="t">AI companion market, global revenue</div>
@@ -322,8 +330,8 @@
         </table>
       </div>
       <div class="mkt-notes">
-        <div class="mkt-note a d3"><h3>Act I &amp; II ride a priced wave</h3><p>Companionship + digital coaching are measured markets growing ~30% a year, with 50M+ monthly users already acquired by first-generation apps.</p></div>
-        <div class="mkt-note a d4"><h3>Act III creates its own market</h3><p>~60M people die each year, each leaving behind ~5 close mourners. Grief tech today is a rounding error. The comparable isn't an app category — it's <b>what humanity has always paid for remembrance</b>: memorials, portraits, séances, cathedrals.</p></div>
+        <div class="mkt-note a d3"><h3>Acts I &amp; II ride the wave</h3><p>5× by 2030. 50M users already acquired for us.</p></div>
+        <div class="mkt-note a d4"><h3>Act III makes its own</h3><p>The comparable isn't an app category — it's <b>what humanity has always paid for remembrance</b>.</p></div>
       </div>
     </div>
   </section>
@@ -332,25 +340,25 @@
   <section id="model" class="slide" data-name="Business Model">
     <p class="eyebrow a">Business Model</p>
     <h2 class="a">Fun acquires. Change retains. <em>Memory endures.</em></h2>
-    <p class="lede a">One engine, three subscriptions, compounding LTV. Users don't graduate out of Relâche — they graduate deeper in.</p>
+    <p class="lede a">Users don't graduate out of Relâche. They graduate <b>deeper in</b>.</p>
     <div class="flow">
-      <div class="stage f1 a d2"><span class="k">Act I · $10–20/mo</span><h3>Companion subscriptions</h3><p>Prosumer creators. Viral by nature — the co-host appears in every video, on every stream. CAC ≈ $0.</p></div>
+      <div class="stage f1 a d2"><span class="k">Act I</span><h3>$10–20/mo</h3><p>Viral by design. CAC ≈ $0.</p></div>
       <div class="arrow a d3">→</div>
-      <div class="stage f2 a d3"><span class="k">Act II · $30–80/mo</span><h3>Coaching journeys</h3><p>Priced against human coaching ($200+/mo), reimbursable against digital therapeutics. Daily habit = daily retention.</p></div>
+      <div class="stage f2 a d3"><span class="k">Act II</span><h3>$30–80/mo</h3><p>Daily habit. Daily retention.</p></div>
       <div class="arrow a d4">→</div>
-      <div class="stage f3 a d4"><span class="k">Act III · $50+/mo, forever</span><h3>The Netherworld</h3><p>Assembly fee + perpetual visitation. Multi-decade LTV, near-zero churn, and legacy-capture creates demand decades in advance.</p></div>
+      <div class="stage f3 a d4"><span class="k">Act III</span><h3>$50+/mo · forever</h3><p>Multi-decade LTV. Near-zero churn.</p></div>
     </div>
   </section>
 
   <!-- 11 · MOAT -->
   <section id="whyus" class="slide" data-name="Why Us">
     <p class="eyebrow a">Why Us</p>
-    <h2 class="a">Everyone can call the APIs. <em>We know what makes it a relationship.</em></h2>
+    <h2 class="a">Seventeen years learning <em>what makes it a relationship</em>.</h2>
     <div class="moat-list">
-      <div class="moat a d2"><h3>20 years of relational-agent science</h3><p>The founders trained in the lab that defined the field — engagement maintenance, working alliance, longitudinal affect. This literature is our product spec.</p></div>
-      <div class="moat a d3"><h3>Tailored storytelling as the core loop</h3><p>Langxuan's PhD: drama managers that adapt a narrative to each user. Relationships are stories — we generate yours, continuously.</p></div>
-      <div class="moat a d4"><h3>Clinically validated behavior change</h3><p>We've run the RCTs on agent-influenced behavior change that Act II requires — and know how to pass IRBs, not just app review.</p></div>
-      <div class="moat a d5"><h3>Embodiment expertise</h3><p>Lazlo's decade in ECAs, procedural animation, and immersive 3D/VR — the exact stack that turns a chat model into a person in the room.</p></div>
+      <div class="moat a d2"><h3>The science</h3><p>Trained in the lab that defined the field. The literature is our spec.</p></div>
+      <div class="moat a d3"><h3>The story</h3><p>Tailored storytelling — a relationship is a story, generated continuously.</p></div>
+      <div class="moat a d4"><h3>The proof</h3><p>Clinical trials of agent-driven change. IRBs, not just app review.</p></div>
+      <div class="moat a d5"><h3>The body</h3><p>A decade of embodiment and 3D/VR — a person in the room.</p></div>
     </div>
   </section>
 
@@ -363,20 +371,16 @@
         <img class="mono" src="../assets/img/langxuan.jpg" alt="Langxuan Yin">
         <h3>Langxuan Yin, PhD</h3>
         <div class="r">Co-founder · CEO</div>
-        <p>PhD, Northeastern Relational Agents Group. Specialized in customized, tailored storytelling for
-        relational agents — interactive narrative and drama managers for health interventions. Two decades in
-        behavioral science; ran clinical studies on agent-influenced behavior change and patient empowerment.</p>
+        <p>Tailored storytelling. Behavioral science. Clinical trials of agent-driven change.</p>
       </div>
       <div class="fcard a d3">
         <img class="mono" src="../assets/img/lazlo.jpg" alt="Lazlo Ring">
         <h3>Lazlo Ring, PhD</h3>
         <div class="r">Co-founder · CTO</div>
-        <p>PhD &amp; postdoc, same lab. 1,300+ citations on embodied conversational agents, affective computing
-        and procedural animation — including landmark always-on companions for isolated older adults. Since then:
-        leading innovation in immersive 3D &amp; VR experiences.</p>
+        <p>Embodied agents. Procedural animation. Immersive 3D &amp; VR. 1,300+ citations.</p>
       </div>
     </div>
-    <p class="lede a d4" style="margin-top:1.8rem;font-family:var(--serif);font-style:italic">We met in the same lab seventeen years ago. We've been proving this idea to each other ever since.</p>
+    <p class="lede a d4" style="margin-top:1.8rem;font-family:var(--serif);font-style:italic">Seventeen years proving this idea to each other.</p>
   </section>
 
   <!-- 13 · ASK -->
@@ -384,11 +388,11 @@
     <div class="bg" style="background-image:url('../assets/img/threads.jpg')"></div>
     <div class="veil" style="background:rgba(11,14,26,.85)"></div>
     <p class="eyebrow a">The Ask</p>
-    <h2 class="a">Raising a seed round to ship <em>Act I</em> and light up the flywheel.</h2>
+    <h2 class="a"><em>Act I</em> ships this year.</h2>
     <div class="ask-grid">
-      <div class="milestone a d2"><span class="k">Months 0–6</span><h3>Co-Host alpha</h3><p>Live agent co-host for 100 design-partner streamers &amp; podcasters; D&amp;D Game Master beta.</p></div>
-      <div class="milestone a d3"><span class="k">Months 6–14</span><h3>10,000 creators</h3><p>Public launch. Every stream featuring our co-host is an ad. Begin Act II clinical pilot with academic partners.</p></div>
-      <div class="milestone a d4"><span class="k">Months 14–24</span><h3>Act II launch · Act III prototype</h3><p>Coaching journeys GA; first Netherworld reunions with design families, done with the care they deserve.</p></div>
+      <div class="milestone a d2"><span class="k">Months 0–6</span><h3>Co-Host alpha</h3><p>100 design-partner creators.</p></div>
+      <div class="milestone a d3"><span class="k">Months 6–14</span><h3>10,000 creators</h3><p>Public launch. Act II clinical pilot.</p></div>
+      <div class="milestone a d4"><span class="k">Months 14–24</span><h3>Act II GA · Act III first reunions</h3><p>Done with the care they deserve.</p></div>
     </div>
     <p class="lede a d5"><b>Langxuan Yin</b> · hello@relache.ai &nbsp;·&nbsp; Boston / San Francisco</p>
     <a class="backlink a d5" href="../">← Back to relache.ai</a>
