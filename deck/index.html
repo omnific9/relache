@@ -75,15 +75,19 @@
   /* quote slide */
   .s-quote blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,3.2vw,2.6rem);max-width:26ch;line-height:1.35}
   .s-quote cite{display:block;font-family:var(--sans);font-style:normal;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:1.8rem}
-  .dream-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:4.5rem;align-items:center;max-width:1180px}
+  .dream-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:3.5rem;align-items:center;max-width:1240px}
   @media(max-width:900px){.dream-grid{grid-template-columns:1fr;gap:2rem}}
-  .frame{justify-self:center;max-width:480px;background:linear-gradient(175deg,#efe8da,#e3dbc9);padding:14px 14px 1rem;border-radius:4px;
-         box-shadow:0 34px 80px rgba(0,0,0,.65),0 0 60px rgba(227,92,68,.12);transform:rotate(2.2deg);transition:transform .5s ease}
-  .frame:hover{transform:rotate(0deg) scale(1.02)}
-  .frame img{display:block;width:100%;border-radius:2px;
-             filter:grayscale(.8) sepia(.38) contrast(1.04) brightness(.96) saturate(1.15)}
-  .frame figcaption{font-family:var(--serif);font-style:italic;color:#4a4335;font-size:.9rem;text-align:center;padding:.7rem .4rem .2rem}
-  @media(max-width:900px){.frame{max-width:340px}}
+  .artifacts{display:flex;align-items:center;justify-content:center}
+  .frame{background:linear-gradient(175deg,#efe8da,#e3dbc9);padding:12px 12px .8rem;border-radius:4px;
+         box-shadow:0 34px 80px rgba(0,0,0,.65),0 0 60px rgba(227,92,68,.12);transition:transform .5s ease}
+  .frame img{display:block;width:100%;border-radius:2px}
+  .frame figcaption{font-family:var(--serif);font-style:italic;color:#4a4335;font-size:.82rem;text-align:center;padding:.6rem .3rem .1rem}
+  .frame.poster{max-width:230px;transform:rotate(-4deg) translateY(-20px);z-index:1}
+  .frame.poster img{filter:saturate(.92) contrast(1.02)}
+  .frame.photo{max-width:400px;margin-left:-16px;transform:rotate(2.2deg);z-index:2}
+  .frame.photo img{filter:grayscale(.8) sepia(.38) contrast(1.04) brightness(.96) saturate(1.15)}
+  .frame:hover{transform:rotate(0deg) scale(1.03);z-index:3}
+  @media(max-width:900px){.frame.photo{max-width:300px;margin-left:-30px}.frame.poster{max-width:150px}}
 
   /* hero number */
   .huge{font-family:var(--serif);font-size:clamp(4.5rem,13vw,10rem);line-height:1;color:var(--coral-bright);margin:.5rem 0 1.2rem}
@@ -222,10 +226,16 @@
         <p class="lede a d2" style="margin-top:2rem">Seventeen years of research. Clinical trials in hospitals
           and homes. Proof that a human–agent relationship <b>holds</b>.</p>
       </div>
-      <figure class="frame a d3">
-        <img src="../assets/img/rag-lab.jpg" alt="The Relational Agents Group at Northeastern University, circa 2009">
-        <figcaption>Relational Agents Group, Northeastern — where we met · c. 2009</figcaption>
-      </figure>
+      <div class="artifacts">
+        <figure class="frame poster a d3">
+          <img src="../assets/img/her-poster.jpg" alt="Theatrical poster for Her (2013)">
+          <figcaption>The fiction · 2013</figcaption>
+        </figure>
+        <figure class="frame photo a d4">
+          <img src="../assets/img/rag-lab.jpg" alt="The Relational Agents Group at Northeastern University, circa 2009">
+          <figcaption>The reality — our lab, Northeastern · c. 2009</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
